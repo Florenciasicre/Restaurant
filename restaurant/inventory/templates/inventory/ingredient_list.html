@@ -1,0 +1,56 @@
+{% extends 'base.html' %} {%load static %} {% block style %}
+<script
+  src="https://kit.fontawesome.com/409333c207.js"
+  crossorigin="anonymous"
+></script>
+{% endblock style %} {% block content %}
+<div class="container text-center mt-3">
+  <div class="row d-flex align-items-center">
+    <div class="col-2 ">
+
+      <h2 class="title">Ingredients</h2>
+    </div>
+    <div class="col-10 ">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Unit</th>
+            <th scope="col">Price</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for ingredient in object_list %}
+          <tr>
+            <td>{{ ingredient.name }}</td>
+            <td>{{ingredient.available_quantity}}</td>
+            <td>{{ingredient.unit}}</td>
+            <td>{{ingredient.price}}</td>
+            <td>
+              <a href="{% url 'delete_ingredient' ingredient.id %}">
+                <i class="fa-sharp fa-solid fa-pencil"></i>
+              </a>
+              <br />
+              <a href="{% url 'delete_ingredient' ingredient.id %}">
+                <i class="fa-sharp fa-solid fa-trash-can"></i>
+              </a>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <div class="d-grid gap-2">
+        <a
+          class="btn btn-primary"
+          type="button"
+          href="{% url 'add_ingredient' %}"
+        >
+          <i class="fa-duotone fa-crate-apple">ADD</i>
+        </a>
+      </div>
+      {% endblock %}
+    </div>
+  </div>
+</div>

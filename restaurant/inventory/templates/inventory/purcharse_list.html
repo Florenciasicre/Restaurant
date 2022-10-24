@@ -1,0 +1,14 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container">
+  <a href="{% url 'new_purcharse' %}">Add a new purcharse </a><br />
+  {% for purcharse in object_list %}
+  <div class="mt-3">
+    <ul>
+      <dd>
+        {{purcharse.menu_item}}-------------------- {{purcharse.timestamp}}
+      </dd>
+    </ul>
+  </div>
+  {% endfor %}
+</div>
+{% endblock content %}

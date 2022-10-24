@@ -1,0 +1,24 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="container">
+  <h2 class="mt-2">Menu</h2>
+  <a href="{% url 'add_recipe' %}"> Add a new recipie </a><br />
+  <a href="{% url 'add_menu' %}">Create a new Menu Item</a>
+  <div class="mt-3">
+    <div class="row">
+      {% for menu in object_list %}
+      <div class="col-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">{{menu.name_item}}</h5>
+            <p class="card-text">
+              
+            </p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock content %}

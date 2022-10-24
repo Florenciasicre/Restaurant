@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %} 
+{%block style %}
+<link rel="stylesheet" href="{% static 'inventory/css/form.css' %}" />
+{%endblock style%} 
+{% block content %} 
+<div class="home">
+  <div>
+    <h2>Menu</h2>
+    <table class="line-table">
+      <thead>
+        <tr>
+          <th>Menu</th>
+          <th>Ingredient</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for ingredient in ingredient %}
+        <tr>
+          <td>{{ ingredient.name }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock%}

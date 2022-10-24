@@ -1,0 +1,49 @@
+body,
+html {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  color: #edf6f9;
+}
+
+body {
+  background: url('/static/inventory/img/background1.jpg') no-repeat;
+  background-size: cover;
+  background-position: center;
+  font-family: 'Nunito Sans', sans-serif, 'georgia';
+}
+.card {
+  background-color: #031926;
+  color: white;
+  width: 25rem;
+}
+
+.form-control {
+  background-color: #031926;
+  color: #edf6f9;
+  margin: 1rem 0;
+  border-color: #86b7fe;
+  box-shadow: 0 0 0 0.25remrgba (13, 110, 253, 0.25);
+}
+.form-control:focus {
+  color: #edf6f9;
+  background-color: #031926;
+  border-color: #86b7fe;
+  box-shadow: 0 0 0 0.25remrgba (13, 110, 253, 0.25);
+}
+
+button {
+  text-decoration: none;
+  border: none;
+  background-color: transparent;
+  color: #edf6f9;
+}
+
+a {
+  color: #edf6f9;
+  text-decoration: none;
+  writing-mode: vertical-lr;
+  text-orientation: sideways;
+  transform: scale(-1);
+  margin-left: 5%;
+}
