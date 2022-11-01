@@ -1,3 +1,4 @@
+from traceback import format_exc
 from django.shortcuts import render
 from django.views.generic import ListView, TemplateView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
@@ -10,11 +11,16 @@ from .models import *
 from .form import ingredient_form, menuItem_form, recipies_form, purcharse_form
 # Create your views here.
 
-
 class HomeView(LoginRequiredMixin, TemplateView):
     template_name = "inventory/home.html"
 
-
+    def get_context_data(self, **kwargs):
+        context = super(HomeView,self).get_context_data(**kwargs)
+        #context['MenuItem']= MenuItem.objects.all() 
+        #context['Ingredient'] = Ingredient.objects.all()
+        context['Recepes'] = Recepes.objects.all()
+        return context
+        
 class singUp(CreateView):
     form_class = UserCreationForm
     success_url = reverse_lazy("home")
@@ -47,13 +53,10 @@ class UpdateIngredientView(LoginRequiredMixin, UpdateView):
     template_name = "inventory/update_ingredient.html"
     form_class = ingredient_form
 
-# Menu
-
-
 class MenuListView(LoginRequiredMixin, ListView):
     model = MenuItem
     template_name = "inventory/menuItem_list.html"
-
+   
 
 class CreateMenuView(LoginRequiredMixin, CreateView):
     model = MenuItem

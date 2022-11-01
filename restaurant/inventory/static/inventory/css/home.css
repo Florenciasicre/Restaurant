@@ -1,0 +1,15 @@
+
+h2,th,a,h5,label,h4{
+    color: white;
+}
+
+.card,input{ 
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255,0.3);
+    background: rgba(255, 255, 255,0.2);
+ }
+ button{
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255,0.3);
+    background: rgba(255, 255, 255,0.2);
+ }

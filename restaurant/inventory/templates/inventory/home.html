@@ -1,27 +1,27 @@
-{% extends 'base.html' %}
-{% load static %} 
-{%block style %}
-<link rel="stylesheet" href="{% static 'inventory/css/form.css' %}" />
+{% extends 'base.html' %} {% load static %}
+ {%block style %}
+<link rel="stylesheet" href="{% static 'inventory/css/home.css'%}" />
 {%endblock style%} 
-{% block content %} 
-<div class="home">
-  <div>
-    <h2>Menu</h2>
-    <table class="line-table">
-      <thead>
-        <tr>
-          <th>Menu</th>
-          <th>Ingredient</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for ingredient in ingredient %}
-        <tr>
-          <td>{{ ingredient.name }}</td>
-        </tr>
-        {% endfor %}
-      </tbody>
-    </table>
+{% block content %}
+<div class="container mt-4">
+  <h4>Recepes</h4>
+  <div class="mt-3">
+    <div class="row">
+      {% for recepe in Recepes %}
+      <div class="col-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title text-center">{{recepe.menu_item}}</h5>
+            <ul>
+              <h6>Ingredients</h6>
+              <li>{{recepe.ingredient}} - Quantity: {{recepe.quantity}}</li>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
   </div>
 </div>
 {% endblock%}

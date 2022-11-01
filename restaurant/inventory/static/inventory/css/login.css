@@ -6,7 +6,7 @@ html {
   color: #edf6f9;
 }
 
-body {
+body{
   background: url('/static/inventory/img/background1.jpg') no-repeat;
   background-size: cover;
   background-position: center;

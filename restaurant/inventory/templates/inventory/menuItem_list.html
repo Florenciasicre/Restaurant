@@ -1,5 +1,9 @@
-{% extends 'base.html' %} {% block content %}
-
+{% extends 'base.html' %} 
+{% load static %} 
+{%block style %}
+<link rel="stylesheet" href="{% static 'inventory/css/home.css' %}" />
+{%endblock style%} 
+{% block content %}
 <div class="container">
   <h2 class="mt-2">Menu</h2>
   <a href="{% url 'add_recipe' %}"> Add a new recipie </a><br />
@@ -10,9 +14,8 @@
       <div class="col-4">
         <div class="card">
           <div class="card-body">
-            <h5 class="card-title">{{menu.name_item}}</h5>
-            <p class="card-text">
-              
+            <h5 class="card-title text-center">{{menu.name_item}}</h5>
+            <p class="card-text"> 
             </p>
           </div>
         </div>

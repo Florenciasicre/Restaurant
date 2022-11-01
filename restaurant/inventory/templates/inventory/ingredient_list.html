@@ -1,13 +1,14 @@
-{% extends 'base.html' %} {%load static %} {% block style %}
+{% extends 'base.html' %} {%load static %} 
+{%block style %}
+<link rel="stylesheet" href="{% static 'inventory/css/home.css' %}" />
 <script
   src="https://kit.fontawesome.com/409333c207.js"
-  crossorigin="anonymous"
-></script>
-{% endblock style %} {% block content %}
+  crossorigin="anonymous"></script>
+{% endblock style %}
+ {% block content %}
 <div class="container text-center mt-3">
   <div class="row d-flex align-items-center">
     <div class="col-2 ">
-
       <h2 class="title">Ingredients</h2>
     </div>
     <div class="col-10 ">
