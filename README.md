@@ -29,7 +29,7 @@ Steps to follow:
 > The inventory every time a sale is made will be automatically updated.
 
 
-## Intalación
+## Instalación
 
 Pasos a seguir:
 
